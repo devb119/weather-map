@@ -32,3 +32,50 @@
 .leaflet-control-zoom-out span {
   color: #ffffff !important;
 }
+
+.leaflet-gac-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-gac-wrapper::before {
+  content: "WEATHERMAP";
+  font-size: 32px;
+  font-weight: 600;
+  color: #3697d1;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.leaflet-gac-control {
+  width: 400px;
+  border: none;
+  padding: 5px 16px;
+  border-radius: 20px;
+  opacity: 0.9;
+  border: solid #666666 1px;
+  transition: all 0.1s;
+  position: relative;
+  font-size: 16px;
+}
+
+.delete-btn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  right: 20px;
+  top: 35%;
+  border: none;
+  background-color: transparent;
+}
+
+.leaflet-gac-control:focus {
+  outline: none !important;
+  opacity: 1;
+}
