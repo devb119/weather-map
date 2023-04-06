@@ -35,7 +35,6 @@ export default function Menu() {
     dispatch({ type: actionType.SET_MAP_MODE, mapMode: mode });
   };
 
-  console.log(mapMode);
   return (
     <>
       <button
@@ -64,7 +63,7 @@ export default function Menu() {
                 className={` p-3 rounded-full ${
                   mapMode.title === item.title
                     ? "bg-active text-white"
-                    : "text-base"
+                    : "text-primary"
                 }`}
               >
                 <p className="text-2xl">{item.icon}</p>
