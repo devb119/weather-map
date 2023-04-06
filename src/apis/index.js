@@ -1,4 +1,4 @@
-import { REVERSE_GEOCODING_URL } from "./baseUrl";
+import {} from "./baseUrl";
 import axios from "axios";
 
 const OWM_API_KEY = import.meta.env.VITE_OWM_API_KEY;
