@@ -7,7 +7,7 @@ export const actionType = {
 const reducer = (state, action) => {
   switch (action.type) {
     case actionType.SET_MAP_MODE:
-      return { ...state, mapModes: action.mapModes };
+      return { ...state, mapMode: action.mapMode };
     case actionType.SET_LAT_LNG:
       return { ...state, latlng: action.latlng };
     case actionType.SET_ADDRESS:

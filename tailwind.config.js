@@ -56,6 +56,9 @@ module.exports = {
       },
       colors: {
         primary: "#2689c2",
+        base: "rgb(47, 101, 143)",
+        icon: "rgb(53, 151, 209)",
+        active: "rgb(247, 167, 21)",
       },
     },
   },
