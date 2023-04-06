@@ -2,6 +2,7 @@ import React from "react";
 import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { MyPopup, SearchBar } from "../components";
+import GeneralInfo from "../components/GeneralInfo";
 
 const LeafletMap = () => {
   return (
@@ -19,6 +20,7 @@ const LeafletMap = () => {
       <ZoomControl position="topright" />
       <SearchBar />
       <MyPopup />
+      <GeneralInfo />
     </MapContainer>
   );
 };
