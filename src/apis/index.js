@@ -1,7 +1,7 @@
 import {} from "./baseUrl";
 import axios from "axios";
 
-const OWM_API_KEY = import.meta.env.VITE_OWM_API_KEY;
+export const OWM_API_KEY = import.meta.env.VITE_OWM_API_KEY;
 
 const geocoder = new google.maps.Geocoder();
 
