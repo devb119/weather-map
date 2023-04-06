@@ -6,4 +6,5 @@
 
 export const initialState = {
   latlng: new L.latLng(21.0038, 105.839),
+  address: "",
 };
