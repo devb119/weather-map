@@ -1,5 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   theme: {
     extend: {
       rotate: {
@@ -81,6 +86,7 @@ module.exports = {
     },
   },
   plugins: [
+    require("tw-elements/dist/plugin"),
     // require("tailwind-scrollbar")
     // require("@tailwindcss/line-clamp"),
   ],

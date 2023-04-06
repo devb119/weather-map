@@ -18,3 +18,7 @@ body {
   font-family: "Quicksand", sans-serif;
   box-sizing: border-box;
 }
+
+.topmost {
+  z-index: 1000;
+}
