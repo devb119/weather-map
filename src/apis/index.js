@@ -1,4 +1,4 @@
-import { CURRENT_WEATHER_API } from "./baseUrl";
+import { CURRENT_WEATHER_API, WEATHER_FORECAST_API } from "./baseUrl";
 import axios from "axios";
 
 export const OWM_API_KEY = import.meta.env.VITE_OWM_API_KEY;
@@ -23,6 +23,17 @@ export const getAddress = async (latlng) => {
 export const getCurrentWeather = async (lat, lon) => {
   try {
     const url = `${CURRENT_WEATHER_API}?lat=${lat}&lon=${lon}&appid=${OWM_API_KEY}`;
+    const res = await axios(url);
+    if (res.status !== 200) return null;
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getForecastWeather = async (lat, lon, limit = 10) => {
+  try {
+    const url = `${WEATHER_FORECAST_API}?lat=${lat}&lon=${lon}&cnt=${limit}&appid=${OWM_API_KEY}`;
     const res = await axios(url);
     if (res.status !== 200) return null;
     return res.data;

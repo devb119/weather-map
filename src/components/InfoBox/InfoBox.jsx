@@ -4,6 +4,7 @@ import "./InfoBox.styles.css";
 import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import Information from "./Information";
 
 export function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,7 +53,7 @@ const InfoBox = () => {
             3
           )}`}
         </p>
-        {/* <AnalysisTab temperatureChartData={temperatureChartData} /> */}
+        <Information />
       </div>
     </div>
   );

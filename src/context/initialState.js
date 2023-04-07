@@ -3,4 +3,7 @@ export const initialState = {
   address: "",
   mapMode: {},
   isOpenInfo: false,
+  currentWeather: null,
+  isLoadingInfo: true,
+  forecastData: null,
 };
