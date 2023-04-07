@@ -1,4 +1,4 @@
-import {} from "./baseUrl";
+import { CURRENT_WEATHER_API } from "./baseUrl";
 import axios from "axios";
 
 export const OWM_API_KEY = import.meta.env.VITE_OWM_API_KEY;
@@ -17,5 +17,16 @@ export const getAddress = async (latlng) => {
     }
   } catch (err) {
     window.alert("Geocoder failed due to: " + err);
+  }
+};
+
+export const getCurrentWeather = async (lat, lon) => {
+  try {
+    const url = `${CURRENT_WEATHER_API}?lat=${lat}&lon=${lon}&appid=${OWM_API_KEY}`;
+    const res = await axios(url);
+    if (res.status !== 200) return null;
+    return res.data;
+  } catch (err) {
+    console.log(err);
   }
 };
