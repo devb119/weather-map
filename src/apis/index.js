@@ -24,6 +24,7 @@ export const getCurrentWeather = async (lat, lon) => {
   try {
     const url = `${CURRENT_WEATHER_API}?lat=${lat}&lon=${lon}&appid=${OWM_API_KEY}`;
     const res = await axios(url);
+
     if (res.status !== 200) return null;
     return res.data;
   } catch (err) {
