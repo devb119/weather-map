@@ -1,7 +1,7 @@
 import { CURRENT_WEATHER_API, WEATHER_FORECAST_API } from "./baseUrl";
 import axios from "axios";
 
-export const OWM_API_KEY = import.meta.env.VITE_OWM_API_KEY;
+export const OWM_API_KEY = "d0672c5951da1c0fd99d64e85831f77a";
 
 const geocoder = new google.maps.Geocoder();
 
