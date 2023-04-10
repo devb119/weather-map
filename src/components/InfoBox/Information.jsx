@@ -31,8 +31,7 @@ const Information = () => {
         const formattedTime = el.dt_txt.split(" ")[1].slice(0, 5);
         temp.push({
           formattedTime,
-          max: (el.main.temp_max - 272.15).toFixed(1),
-          min: (el.main.temp_min - 272.15).toFixed(1),
+          value: (el.main.temp - 272.15).toFixed(1),
         });
         pressure.push({ formattedTime, value: el.main.pressure });
         humid.push({ formattedTime, value: el.main.humidity });
@@ -101,7 +100,9 @@ const Information = () => {
         <Tab icon={<TbGauge />} label="Pressure" aria-label="pressure" />
       </Tabs>
       <TabPanel value={value} index={0}>
-        {temperatureChartData && <MinMaxChart data={temperatureChartData} />}
+        {temperatureChartData && (
+          <SingleLineChart data={temperatureChartData} unit="℃" />
+        )}
       </TabPanel>
       <TabPanel value={value} index={1}>
         {humidityChartData && (
