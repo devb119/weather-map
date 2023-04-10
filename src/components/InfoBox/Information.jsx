@@ -31,7 +31,7 @@ const Information = () => {
         const formattedTime = el.dt_txt.split(" ")[1].slice(0, 5);
         temp.push({
           formattedTime,
-          value: (el.main.temp - 272.15).toFixed(1),
+          value: +(el.main.temp - 272.15).toFixed(1),
         });
         pressure.push({ formattedTime, value: el.main.pressure });
         humid.push({ formattedTime, value: el.main.humidity });
