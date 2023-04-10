@@ -1,5 +1,5 @@
 import "./App.css";
-import { InfoBox } from "./components";
+import { InfoBox, LegendLayer } from "./components";
 import Menu from "./components/Menu";
 import LeafletMap from "./map/LeafletMap";
 
@@ -9,6 +9,7 @@ function App() {
       <LeafletMap />
       <InfoBox />
       <Menu />
+      <LegendLayer />
     </div>
   );
 }

@@ -10,11 +10,26 @@ import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
 export const menuOptions = [
-  { title: "CLOUD", icon: <AiFillCloud />, layer: "clouds_new" },
-  { title: "PRECIPITATION", icon: <FaCloudRain />, layer: "precipitation_new" },
-  { title: "PRESSURE", icon: <MdTimelapse />, layer: "pressure_new" },
-  { title: "TEMPERATURE", icon: <TbTemperatureCelsius />, layer: "temp_new" },
-  { title: "WIND", icon: <TbWind />, layer: "wind_new" },
+  { title: "CLOUD", icon: <AiFillCloud />, layer: "clouds_new", unit: "%" },
+  {
+    title: "PRECIPITATION",
+    icon: <FaCloudRain />,
+    layer: "precipitation_new",
+    unit: "mm",
+  },
+  {
+    title: "PRESSURE",
+    icon: <MdTimelapse />,
+    layer: "pressure_new",
+    unit: "hPa",
+  },
+  {
+    title: "TEMPERATURE",
+    icon: <TbTemperatureCelsius />,
+    layer: "temp_new",
+    unit: "℃",
+  },
+  { title: "WIND", icon: <TbWind />, layer: "wind_new", unit: "m/s" },
 ];
 
 export default function Menu() {
@@ -41,17 +56,19 @@ export default function Menu() {
   return (
     <>
       <button
-        className="absolute topmost left-32 bottom-20 rounded-3xl bg-black bg-opacity-60 p-4 w-56"
+        className="absolute topmost left-32 bottom-20 rounded-3xl bg-black bg-opacity-60 p-1 w-56 h-16"
         onClick={toggleDrawer(true)}
       >
         <div className="flex items-center justify-center gap-4">
           <div className="text-3xl text-white absolute -left-2 h-16 w-16 flex items-center justify-center rounded-full bg-active">
             {mapMode.icon ? mapMode.icon : <BsFillLayersFill />}
           </div>
-          <p className="text-active font-bold text-xl ml-10">
-            {mapMode.title ? mapMode.title : "Choose layer"}
-            <br />
-          </p>
+          <div className="ml-10 flex flex-col">
+            <p className="text-active font-bold text-xl">
+              {mapMode.title ? mapMode.title : "Choose layer"}
+            </p>
+            <p className="text-active">{mapMode.unit ? mapMode.unit : ""}</p>
+          </div>
         </div>
       </button>
       <Drawer anchor="left" open={isOpenMenu} onClose={toggleDrawer(false)}>
