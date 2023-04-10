@@ -5,6 +5,7 @@ import { AiFillCloud } from "react-icons/ai";
 import { MdTimelapse } from "react-icons/md";
 import { TbWind } from "react-icons/tb";
 import { TbTemperatureCelsius } from "react-icons/tb";
+import { BsFillLayersFill } from "react-icons/bs";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
@@ -32,16 +33,26 @@ export default function Menu() {
   };
 
   const handleChangeMode = (mode) => () => {
-    dispatch({ type: actionType.SET_MAP_MODE, mapMode: mode });
+    if (mapMode.title === mode.title)
+      dispatch({ type: actionType.SET_MAP_MODE, mapMode: {} });
+    else dispatch({ type: actionType.SET_MAP_MODE, mapMode: mode });
   };
 
   return (
     <>
       <button
-        className="absolute topmost left-32 bottom-20 rounded bg-primary p-4"
+        className="absolute topmost left-32 bottom-20 rounded-3xl bg-black bg-opacity-60 p-4 w-56"
         onClick={toggleDrawer(true)}
       >
-        Hello
+        <div className="flex items-center justify-center gap-4">
+          <div className="text-3xl text-white absolute -left-2 h-16 w-16 flex items-center justify-center rounded-full bg-active">
+            {mapMode.icon ? mapMode.icon : <BsFillLayersFill />}
+          </div>
+          <p className="text-active font-bold text-xl ml-10">
+            {mapMode.title ? mapMode.title : "Choose layer"}
+            <br />
+          </p>
+        </div>
       </button>
       <Drawer anchor="left" open={isOpenMenu} onClose={toggleDrawer(false)}>
         <div
