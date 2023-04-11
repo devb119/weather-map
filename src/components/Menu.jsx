@@ -79,7 +79,7 @@ export default function Menu() {
         >
           {menuOptions.map((item) => (
             <button
-              className={`flex items-center justify-start gap-3 font-bold ${
+              className={`flex items-center justify-start gap-3 font-bold hover:bg-gray-100 transition-all rounded-3xl ${
                 mapMode.title === item.title
                   ? "text-active font-extrabold"
                   : "text-base"
