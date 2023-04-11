@@ -43,7 +43,7 @@ const InfoBox = () => {
         <button onClick={handleToggleInfo} className="toggle-info-btn">
           {isOpenInfo ? <AiOutlineUp /> : <AiOutlineDown />}
         </button>
-        <h4 className="mb-0 text-primary">
+        <h4 className="mb-0 text-primary text-2xl">
           <b>{address?.split(",")[0]}</b>
         </h4>
         <h5>{address?.split(",").slice(1).join(", ")}</h5>

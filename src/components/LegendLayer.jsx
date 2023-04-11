@@ -71,7 +71,9 @@ const LegendLayer = () => {
           return (
             <span
               className={`px-2 text-center ${
-                mapMode.title === "CLOUD" ? "text-gray-800" : "text-white"
+                mapMode.title === "CLOUD" || mapMode.title === "PRECIPITATION"
+                  ? "text-gray-800"
+                  : "text-white"
               } font-bold`}
               key={index}
               style={{ background: `${valueUnit.color}` }}
